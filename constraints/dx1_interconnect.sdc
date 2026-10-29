@@ -1,0 +1,5 @@
+create_clock -name aclk -period 2.500 [get_ports aclk]
+create_clock -name pclk -period 10.000 [get_ports pclk]
+set_clock_groups -asynchronous -group [get_clocks aclk] -group [get_clocks pclk]
+set_false_path -from [get_ports aresetn]
+set_false_path -from [get_ports presetn]

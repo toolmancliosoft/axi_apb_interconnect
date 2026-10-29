@@ -1,0 +1,5 @@
+regression:
+  suites:
+    smoke: [address_decode_all_regions, unmapped_address_decerr, apb_read_write_wait_states]
+    nightly: [sustained_multi_initiator_contention, write_burst_backpressure, read_burst_backpressure, nonsecure_access_denied, reset_during_outstanding_transaction]
+  goals: { line: 95, branch: 90, toggle: 85, functional: 95, assertion: 90 }

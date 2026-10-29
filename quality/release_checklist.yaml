@@ -1,0 +1,12 @@
+release: v1.0.0
+checks:
+  metadata_complete: PASS
+  config_schema_review: PASS
+  address_overlap_check: PASS
+  generated_header_consistency: PASS
+  rtl_lint: PASS_DEMO
+  protocol_assertions: PASS_DEMO
+  cdc_review: PASS_WITH_ACTION
+  synthesis_smoke: PASS_DEMO
+  regression: PASS_DEMO
+  production_signoff: NOT_APPLICABLE

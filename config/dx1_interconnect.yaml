@@ -1,0 +1,34 @@
+name: dx1_interconnect
+version: 1.0.0
+axi:
+  address_width: 40
+  data_width: 128
+  id_width: 8
+  user_width: 1
+  clock_mhz: 400
+  arbitration: round_robin
+  max_outstanding_per_initiator: 1
+  initiators:
+    - { name: cortex_a53, index: 0, qos_weight: 4 }
+    - { name: axi_dma, index: 1, qos_weight: 3 }
+    - { name: ethernet_gmac, index: 2, qos_weight: 2 }
+  targets:
+    - { name: boot_sram, base: 0x0000000000, size: 0x00200000, security: secure_and_nonsecure }
+    - { name: dx1_accelerator, base: 0x0040000000, size: 0x00010000, security: secure_and_nonsecure }
+    - { name: axi_dma_ctrl, base: 0x0040010000, size: 0x00010000, security: secure_and_nonsecure }
+    - { name: ethernet_gmac, base: 0x0060000000, size: 0x00020000, security: secure_and_nonsecure }
+    - { name: apb_bridge, base: 0x0062000000, size: 0x03000000, security: mixed }
+    - { name: ddr, base: 0x0080000000, size: 0x80000000, security: secure_and_nonsecure }
+apb:
+  address_width: 24
+  data_width: 32
+  clock_mhz: 100
+  peripherals:
+    - { name: secure_gpio, offset: 0x000000, size: 0x010000, secure: false }
+    - { name: i2c, offset: 0x010000, size: 0x010000, secure: false }
+    - { name: spi, offset: 0x020000, size: 0x010000, secure: false }
+    - { name: uart, offset: 0x030000, size: 0x010000, secure: false }
+    - { name: system_timer_watchdog, offset: 0x040000, size: 0x010000, secure: false }
+    - { name: system_monitor_adc, offset: 0x050000, size: 0x010000, secure: false }
+    - { name: clock_reset_manager, offset: 0x01000000, size: 0x010000, secure: true }
+    - { name: secure_boot, offset: 0x02000000, size: 0x010000, secure: true }

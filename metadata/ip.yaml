@@ -1,0 +1,16 @@
+ip:
+  canonical_name: axi_apb_interconnect
+  display_name: AXI/APB Interconnect Subsystem
+  revision: v1.0.0
+  ownership: Internal IP
+  physical_type: Digital Soft IP
+  language: SystemVerilog
+  source_management: Git
+  category: Interfaces::Bus
+  lifecycle_status: Released
+  reuse_status: Approved
+  originating_project: DX1
+  configurable: true
+  synthesizable: true
+  foundry_independent_rtl: true
+  qualified_configuration: dx1_interconnect

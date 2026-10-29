@@ -1,0 +1,14 @@
+release:
+  name: axi_apb_interconnect
+  version: v1.0.0
+  git_tag: v1.0.0
+  configuration: dx1_interconnect
+  status: Released
+  approvals:
+    design: Approved
+    verification: Approved for Demo
+    integration: Approved
+  generated_artifacts:
+    - dx1_interconnect_addr_map.h
+    - dx1-interconnect.dtsi
+    - dx1_interconnect_manifest.json

@@ -1,0 +1,8 @@
+clock_domains:
+  - { name: axi_clk, frequency_mhz: 400 }
+  - { name: apb_clk, frequency_mhz: 100 }
+cdc_paths:
+  - { from: axi_clk, to: apb_clk, structure: axi_to_apb_async_bridge, verification: required }
+resets:
+  - { name: aresetn, assertion: asynchronous, deassertion: synchronous, domain: axi_clk }
+  - { name: presetn, assertion: asynchronous, deassertion: synchronous, domain: apb_clk }

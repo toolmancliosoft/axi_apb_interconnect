@@ -1,0 +1,123 @@
+{
+  "name": "dx1_interconnect",
+  "version": "1.0.0",
+  "axi": {
+    "address_width": 40,
+    "data_width": 128,
+    "id_width": 8,
+    "user_width": 1,
+    "clock_mhz": 400,
+    "arbitration": "round_robin",
+    "max_outstanding_per_initiator": 1,
+    "initiators": [
+      {
+        "name": "cortex_a53",
+        "index": 0,
+        "qos_weight": 4
+      },
+      {
+        "name": "axi_dma",
+        "index": 1,
+        "qos_weight": 3
+      },
+      {
+        "name": "ethernet_gmac",
+        "index": 2,
+        "qos_weight": 2
+      }
+    ],
+    "targets": [
+      {
+        "name": "boot_sram",
+        "base": 0,
+        "size": 2097152,
+        "security": "secure_and_nonsecure"
+      },
+      {
+        "name": "dx1_accelerator",
+        "base": 1073741824,
+        "size": 65536,
+        "security": "secure_and_nonsecure"
+      },
+      {
+        "name": "axi_dma_ctrl",
+        "base": 1073807360,
+        "size": 65536,
+        "security": "secure_and_nonsecure"
+      },
+      {
+        "name": "ethernet_gmac",
+        "base": 1610612736,
+        "size": 131072,
+        "security": "secure_and_nonsecure"
+      },
+      {
+        "name": "apb_bridge",
+        "base": 1644167168,
+        "size": 50331648,
+        "security": "mixed"
+      },
+      {
+        "name": "ddr",
+        "base": 2147483648,
+        "size": 2147483648,
+        "security": "secure_and_nonsecure"
+      }
+    ]
+  },
+  "apb": {
+    "address_width": 24,
+    "data_width": 32,
+    "clock_mhz": 100,
+    "peripherals": [
+      {
+        "name": "secure_gpio",
+        "offset": 0,
+        "size": 65536,
+        "secure": false
+      },
+      {
+        "name": "i2c",
+        "offset": 65536,
+        "size": 65536,
+        "secure": false
+      },
+      {
+        "name": "spi",
+        "offset": 131072,
+        "size": 65536,
+        "secure": false
+      },
+      {
+        "name": "uart",
+        "offset": 196608,
+        "size": 65536,
+        "secure": false
+      },
+      {
+        "name": "system_timer_watchdog",
+        "offset": 262144,
+        "size": 65536,
+        "secure": false
+      },
+      {
+        "name": "system_monitor_adc",
+        "offset": 327680,
+        "size": 65536,
+        "secure": false
+      },
+      {
+        "name": "clock_reset_manager",
+        "offset": 16777216,
+        "size": 65536,
+        "secure": true
+      },
+      {
+        "name": "secure_boot",
+        "offset": 33554432,
+        "size": 65536,
+        "secure": true
+      }
+    ]
+  }
+}

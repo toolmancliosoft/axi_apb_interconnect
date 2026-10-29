@@ -1,0 +1,10 @@
+dependencies:
+  standards:
+    - AMBA AXI4
+    - AMBA APB4
+  integration:
+    - Clock Reset Manager Subsystem
+    - GIC-400 interrupt map
+    - DX1 address-map baseline
+  consumers:
+    - DX1

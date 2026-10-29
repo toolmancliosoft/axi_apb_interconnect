@@ -1,0 +1,14 @@
++incdir+../interfaces
+../interfaces/axi4_if.sv
+../interfaces/apb4_if.sv
+../axi_apb_interconnect_pkg.sv
+../generated/dx1_addr_map_pkg.sv
+../round_robin_arbiter.sv
+../axi_address_decoder.sv
+../axi_access_policy.sv
+../axi_default_error_target.sv
+../apb_decoder.sv
+../axi_to_apb_bridge.sv
+../apb_fabric.sv
+../interconnect_performance_counters.sv
+../dx1_axi_apb_interconnect.sv

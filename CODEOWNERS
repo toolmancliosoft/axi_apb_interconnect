@@ -1,0 +1,5 @@
+/rtl/ @dx1-interconnect-design
+/config/ @dx1-soc-architecture
+/verification/ @dx1-verification
+/constraints/ @dx1-physical-design
+/firmware/ @dx1-firmware

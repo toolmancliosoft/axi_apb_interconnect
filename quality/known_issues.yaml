@@ -1,0 +1,9 @@
+known_issues:
+  - id: AXIAPB-17
+    severity: medium
+    summary: Async AXI-to-APB bridge is represented as an integration dependency
+    disposition: Replace simple bridge with qualified CDC implementation before production
+  - id: AXIAPB-23
+    severity: low
+    summary: One active read/write route per initiator in demo configuration
+    disposition: Accepted for DX1 v1.0.0 demonstration baseline

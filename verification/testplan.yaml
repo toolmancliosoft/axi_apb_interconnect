@@ -1,0 +1,9 @@
+testplan:
+  - { id: DEC-001, feature: Address decode, test: address_decode_all_regions, priority: critical }
+  - { id: DEC-002, feature: Default target, test: unmapped_address_decerr, priority: critical }
+  - { id: ARB-001, feature: Round robin, test: sustained_multi_initiator_contention, priority: high }
+  - { id: AXI-001, feature: Write routing, test: write_burst_backpressure, priority: critical }
+  - { id: AXI-002, feature: Read routing, test: read_burst_backpressure, priority: critical }
+  - { id: APB-001, feature: APB bridge, test: apb_read_write_wait_states, priority: critical }
+  - { id: SEC-001, feature: Secure regions, test: nonsecure_access_denied, priority: critical }
+  - { id: RST-001, feature: Reset, test: reset_during_outstanding_transaction, priority: high }
